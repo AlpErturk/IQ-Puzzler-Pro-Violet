@@ -1,3 +1,7 @@
+<header>
+    <h1>IQ-Puzzeler</h1>
+<header>
+    
 This is IQ-Puzzeler desktop games README page.
 IQ-Puzzeler allows you to deal with various puzzeling challenges to achieve.
 
