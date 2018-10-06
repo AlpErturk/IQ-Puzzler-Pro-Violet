@@ -1,12 +1,8 @@
 <header>
     <h1>IQ-Puzzler</h1>
 <header>
-    <b>Group Members: </b>
-    -Alp Ertürk   
-    -Betim Doğan
-    -Ege Akın
-    -Elif Gülşah Kaşdoğan 
-    -Safa Aşkın 
+<b>Group Members: </b>Alp Ertürk, Betim Doğan, Ege Akın, Elif Gülşah Kaşdoğan, Safa Aşkın 
+
 
 <b> Project Description: </b> In this project, we are going to implement a game which is originated from a board game called IQ-Puzzler using Java and Object Oriented Programming concepts. 
 
