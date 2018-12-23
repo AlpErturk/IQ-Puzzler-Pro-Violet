@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #E5F4F4;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.mainMenuController">
+   <children>
+      <ImageView fitHeight="670.0" fitWidth="805.0" layoutX="-205.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/Users/alper/Desktop/Version2IQNude 3/Version2IQNude 3/images/menu/snowy.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="622.0" fitWidth="460.0" layoutX="57.0" layoutY="59.0" onMouseClicked="#newGameButtonHandle" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/Users/alper/Desktop/Version2IQNude 3/Version2IQNude 3/images/menu/Menu_Base.png" />
+         </image>
+      </ImageView>
+      <Group layoutX="8.0" layoutY="-18.0" />
+      <ImageView fx:id="PlayView" fitHeight="150.0" fitWidth="200.0" layoutX="187.0" layoutY="176.0" onMousePressed="#newGameButtonHandle" pickOnBounds="true" preserveRatio="true">
+         <image> 
+            <Image url="file:/Users/alper/Desktop/Version2IQNude 3/Version2IQNude 3/images/menu/YellowFirst.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="tutorialView" fitHeight="150.0" fitWidth="200.0" layoutX="187.0" layoutY="344.0" onMousePressed="#tutorialButtonHandle" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/Users/alper/Desktop/Version2IQNude 3/Version2IQNude 3/images/menu/BlueFirst.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LoadView" fitHeight="150.0" fitWidth="200.0" layoutX="187.0" layoutY="257.0" onMousePressed="#loadGameButtonHandle" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/Users/alper/Desktop/Version2IQNude 3/Version2IQNude 3/images/menu/GreenFirst.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="LeaderView" fitHeight="150.0" fitWidth="200.0" layoutX="187.0" layoutY="429.0" onMousePressed="#leaderBoardButtonHandle" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/Users/alper/Desktop/Version2IQNude 3/Version2IQNude 3/images/menu/GreyFirst.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="backView" fitHeight="60.0" fitWidth="50.0" layoutX="506.0" layoutY="26.0" onKeyPressed="#backButtonHandle" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/Users/alper/Desktop/Version2IQNude 3/Version2IQNude 3/images/menu/Back.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

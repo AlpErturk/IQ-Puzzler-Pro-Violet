@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="286.0" prefWidth="442.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PauseAlertBox">
+   <children>
+      <ImageView fitHeight="451.0" fitWidth="621.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/Users/alper/Desktop/Version2IQNude 3/Version2IQNude 3/images/menu/FinishScreen.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="84.0" fitWidth="384.0" layoutX="129.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/Users/alper/Desktop/Version2IQNude 3/Version2IQNude 3/images/menu/Ribbon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="221.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/Users/alper/Desktop/Version2IQNude 3/Version2IQNude 3/images/menu/Congraculations.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="160.0" fitWidth="284.0" layoutX="179.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/Users/alper/Desktop/Version2IQNude 3/Version2IQNude 3/images/menu/threeStar.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="nextView" fitHeight="90.0" fitWidth="125.0" layoutX="348.0" layoutY="277.0" onMousePressed="#nextLevelButtonHandle" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/Users/alper/Desktop/Version2IQNude 3/Version2IQNude 3/images/menu/DoneButton.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="replayView" fitHeight="90.0" fitWidth="125.0" layoutX="208.0" layoutY="277.0" onMousePressed="#replayButtonHandle" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/Users/alper/Desktop/Version2IQNude 3/Version2IQNude 3/images/menu/ReplayButton.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="377.0" layoutY="367.0" text="Next" />
+      <Label layoutX="231.0" layoutY="367.0" text="Replay" />
+   </children>
+</AnchorPane>
