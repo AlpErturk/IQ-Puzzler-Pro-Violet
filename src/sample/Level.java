@@ -1,8 +1,5 @@
 package sample;
 
-import javafx.scene.image.ImageView;
-
-import java.awt.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
@@ -12,21 +9,18 @@ public class Level {
     private int levelNo;
     private boolean isUnlocked;
     private int[][] levelMatrix;
-    private int[][] finishedLevelMatrix;
-    private ImageView boardView;
 
 
-    ArrayList<Piece> unusedPieces;
+    ArrayList<Piece> unsedPieces;
     ArrayList<Piece> usedPieces;
 
 
-    public Level(int levelNo, int time, ArrayList<Piece>unusedPieces, ArrayList<Piece> usedPieces, int[][]levelMatrix, ImageView board){
-        boardView = board;
+    public Level(int levelNo, int time, ArrayList<Piece>unusedPieces, ArrayList<Piece> usedPieces, int[][]levelMatrix){
         this.levelMatrix = levelMatrix;
         this.levelNo = levelNo;
         this.time = time;
         highScore = 0;
-        this.unusedPieces = unusedPieces;
+        this.unsedPieces = unusedPieces;
         this.usedPieces = usedPieces;
         isUnlocked = false;
     }
@@ -36,9 +30,6 @@ public class Level {
             this.highScore = highScore;
     }
 
-    public ImageView getBoardView(){
-        return boardView;
-    }
     public int getTime(){
         return time;
     }
@@ -63,15 +54,11 @@ public class Level {
 
     }
 
-    //bu metod levellarda kullanılacak piecelerin initial positionlarını ayarlar
-    public ArrayList<Piece> constructPiecePositions(){
-        ArrayList<Piece> list = new ArrayList<>();
-        return list;
+
+    /*public void addPiecesLevel(ArrayList<Piece> usedPieces){
+    bu Method manuel olarak array doldurmadan pieceleri levele hızlıca eklemeyi sağlıyo
     }
 
-    public ArrayList<Piece> getUnusedPieces(){
-        return unusedPieces;
-    }
+    */
 
-    public ArrayList<Piece> getUsedPieces(){ return usedPieces; }
 }

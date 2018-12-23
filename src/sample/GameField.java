@@ -1,11 +1,5 @@
 package sample;
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class GameField{
@@ -23,7 +17,7 @@ public class GameField{
 
         game = Game.getInstance();
 
-        //board2d = new Board(level.getLevelMatrix());
+        board2d = new Board(level.getLevelMatrix());
     }
 
     public int calculateScore(){
@@ -31,6 +25,7 @@ public class GameField{
         //write the score calculation method here
 
         return score;
+
 
     }
 
@@ -59,9 +54,12 @@ public class GameField{
 
 
 
-    public void gameOver(){
-        System.out.print("gameOver");
+    public boolean gameOver(){
+        int time = level.getTime();
+        if(elapsedTime() < time)
+            return true;
 
+        return false;
     }
 
     public boolean isGameFinished(){

@@ -1,98 +1,39 @@
 package sample;
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-
-import java.io.IOException;
 
 public class Board {
 
-
-    final int boardWidth = 770;
-    final int boardHeight = 350;
-
+    int[][] boardMatrix;
     Image boardImage;
     ImageView  boardView;
-    int[][] boardMatrix;
-    private int sceneWidth;
-    private int sceneHeight;
-    private int leftXCoordinate;
-    private int topYCoordinate;
-    private int rightXCoordinate;
-    private int bottomYCoordinate;
-    private int treshold;
-    private Game game = Game.getInstance();
 
-    public Board(int[][] matrix,int sceneWidth, int sceneHeight){
 
-        boardImage = new Image("file:/Users/alper/Desktop/Version2IQNude 3/Version2IQNude 3/images/boardLast.png");
+    public Board(int[][] matrix){
+        boardImage = new Image("file:/Users/safaaskin/IdeaProjects/Deneme/images/boardpic.png");
         boardView = new ImageView(boardImage);
         boardMatrix = matrix;
-        this.sceneHeight = sceneHeight;
-        this.sceneWidth = sceneWidth;
-
-        leftXCoordinate = (this.sceneWidth - boardWidth) / 2 ;
-        topYCoordinate = 0;
-        rightXCoordinate = leftXCoordinate + boardWidth;
-        bottomYCoordinate = boardHeight + topYCoordinate;
-        treshold = 10;
     }
-
 
 
     public ImageView getBoardView(){
         return boardView;
     }
 
-    public int getBoardWidth(){
-        return boardWidth;
-    }
+    public boolean isAvailable(int i, int j, int[][] pieceMatrix){
 
-    public void updateBoard(){
-        game = Game.getInstance();
-        boardMatrix = game.twoDLevels[game.getCurrent2DLevel()].getLevelMatrix();
-
-    }
-
-
-    // no two piece on each other
-    public boolean isAvailable(int rowIndex, int columnIndex, int[][] pieceMatrix){
         for(int m = 0; m <4; m++){
             for (int n = 0; n < 4; n++){
-                if(n + columnIndex >= 11){
-                    int fazlalikColumn = (n + columnIndex) - 11;
-                    if(pieceMatrix[m][n] != 0 && boardMatrix[rowIndex+m][columnIndex+n-fazlalikColumn] != 0) {
-                        if(pieceMatrix[m][n] != 0 && boardMatrix[rowIndex+m][columnIndex+n-fazlalikColumn] != -2){
-                            return false;
-                        }
-                    }
-                }
-                if(rowIndex + m >= 5){
-                    int fazlalikRow = (rowIndex + m) - 5;
-                    if(pieceMatrix[m][n] != 0 && boardMatrix[rowIndex+m-fazlalikRow][columnIndex+n] != 0) {
-                        if(pieceMatrix[m][n] != 0 && boardMatrix[rowIndex+m-fazlalikRow][columnIndex+n] != -2){
-                            return false;
-                        }
-                    }
-                }
-
-                if(pieceMatrix[m][n] != 0 && boardMatrix[rowIndex+m][columnIndex+n] != 0) {
-                    if(pieceMatrix[m][n] != 0 && boardMatrix[rowIndex+m][columnIndex+n] != -2){
-                        return false;
-                    }
-                }
+                if(pieceMatrix[m][n] == 1 && boardMatrix[i+m][j+n] == 1)
+                    return false;
             }
         }
         return true;
     }
 
 
-    //check is board full
+
     public boolean isFull(){
         for(int i = 0; i < 5; i++){
             for(int j = 0; j < 11; j++){
@@ -100,104 +41,85 @@ public class Board {
                     return false;
             }
         }
+
         return true;
     }
 
+
+
+
+
     //Puzlle piecelerinin dogru yerde oluip olmadigini kontrol eden fonksiyon degilse boardun boundarylerinin disindaysa
     //initial positiona geri donecek
-    public boolean checkPieceBoundary(ImageView pieceView, double xPosition, double yPosition){
-        double currentX = pieceView.getLayoutX();
-        double currentY = pieceView.getLayoutY();
 
-        if((currentX < leftXCoordinate || currentX > rightXCoordinate) || (currentY < topYCoordinate ||currentY > bottomYCoordinate)){
-            //set piece to its initial place
-            pieceView.relocate(xPosition,yPosition);
-            System.out.println(leftXCoordinate);
-            System.out.println(topYCoordinate);
-            System.out.println(rightXCoordinate);
-            System.out.print(bottomYCoordinate);
+    public boolean checkPieceBoundary(ImageView piece, double xPosition, double yPosition){
+        //Board Borders
+        //Boundary Locations
+        final int threshold = 10;
+        int xTopLeft = 40;
+        int yTopLeft = -468;
+        int xTopRight = 770;
+        int yTopRight = -468;
+        int xBottomLeft = 40;
+        int yBottomLeft = -194;
+        int xBottomRight = 770;
+        int yBottomRight = -194;
+
+        if((piece.getLayoutX() < xTopLeft - threshold) || (piece.getLayoutX() > xTopRight + threshold) || (piece.getLayoutY() > yBottomLeft + threshold) || (piece.getLayoutY() < yTopRight - threshold)) {
+            piece.setLayoutX(xPosition);
+            piece.setLayoutY(yPosition);
             return false;
         }
-
-        else{
+        else {
             return true;
         }
     }
 
     //PIECEI BIRAZ DISARI KOYDUGUMUZDA PICECEI BOARDA FIX EDEN FONKSIYON
-    public void putPiece(Piece piece, double [][]XboardMatrix, double [][]YboardMatrix, double initX, double initY){
-        updateBoard();
+    public void putPiece(ImageView piece, double [][]XboardMatrix, double [][]YboardMatrix, int [][]isFull) {
 
-        double currentX = piece.getCurrentImage().getLayoutX();
-        double currentY = piece.getCurrentImage().getLayoutY();
+        //Boundary Locations
+        final int threshold = 10;
+        int xTopLeft = 40;
+        int yTopLeft = -468;
+        int xTopRight = 770;
+        int yTopRight = -468;
+        int xBottomLeft = 40;
+        int yBottomLeft = -194;
+        int xBottomRight = 770;
+        int yBottomRight = -194;
 
-        int indexColumn = ((int)currentX - leftXCoordinate) / 70;
-        int indexRow = ((int)currentY - topYCoordinate) / 70;
+        //Boardun constructorinda initialize edilecek
+//        double [][]XboardMatrix = new double[5][11];
+//        double [][]YboardMatrix = new double[5][11];
+//
+//        int [][] isFull = new int[5][11];
+//
+//
+//        for(int i = 0; i < 5; i++) {
+//            for(int j =0; j < 11; j++) {
+//                XboardMatrix[i][j] = xTopLeft + (66.36)*j;
+//                YboardMatrix[i][j] = yTopLeft + (66.36)*i;
+//            }
+//        }
 
+        double piecePositionX = piece.getLayoutX();
+        double piecePositionY = piece.getLayoutY();
 
-        System.out.println("index row is : " + indexRow);
-        System.out.println("index column is: " + indexColumn);
+        int indexX = (int) (piecePositionX / (66.36));
+        int indexY = (int) ((piecePositionY+468) / (66.36));
 
+        if(((piecePositionX > (XboardMatrix[indexY][indexX] - 10)) && (piecePositionX < (XboardMatrix[indexY][indexX] + 66.36)) && (((piecePositionY > (YboardMatrix[indexY][indexX] - 10)) && (piecePositionY < (YboardMatrix[indexY][indexX] + 66.36)))))){
 
-        if(isAvailable(indexRow, indexColumn, piece.getMatrix())){
-            System.out.println("buraya girdi 1");
-            if (((XboardMatrix[indexRow][indexColumn] - treshold < currentX) && (currentX < XboardMatrix[indexRow][indexColumn + 1])) || ((YboardMatrix[indexRow][indexColumn] - treshold < currentY) && (currentY < YboardMatrix[indexRow + 1][indexColumn]))) {
-                System.out.print("buraya girdi 2");
-                piece.getCurrentImage().relocate(XboardMatrix[indexRow][indexColumn], YboardMatrix[indexRow][indexColumn]);
+            System.out.println(indexX);
+            System.out.println(indexY);
 
-            }
-
-            //set empty locations to 1
-            for(int i = 0; i < 4; i++) {
-                for(int j = 0; j < 4; j++) {
-
-                    if(piece.getMatrix()[i][j] == 1) {
-                        boardMatrix[indexRow+i][j+indexColumn] = piece.getPieceId();
-                    }
-                }
-            }
-        }
-        //if place is occupied return iinitial position do not update board
-        else{
-           // System.out.println("buraya girdi 3");
-            piece.getCurrentImage().relocate(100,100);
-        }
-
-
-        //print board matrix----------------------------------------------------------------------------------------------------------------------------------------------------------------
-        System.out.println();
-        printBoardMatrix();
-        //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-        //----------------------------------------------------------------------------------------------------------------------------------------------------------------
-        if(isFull()){
-
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource("PauseAlertBox.fxml"));
-                Stage window = Main.getMainStage();
-                Scene scene = new Scene(root);
-                window.setTitle("Pause");
-                window.setScene(scene);
-                window.centerOnScreen();
-                Main.setMainStage(window);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            piece.setLayoutX(XboardMatrix[indexY][indexX] + 3);
+            piece.setLayoutY(YboardMatrix[indexY][indexX] + 13);
+            isFull[indexY][indexX] = 1;
 
         }
-        //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
     }
-
-    public void printBoardMatrix() {
-        for(int i = 0; i < 5; i++) {
-            for(int j =0; j < 11; j++) {
-                System.out.print("(");
-                System.out.print(boardMatrix[i][j]);
-                System.out.print(")");
-            }
-            System.out.println();
-        }
-    }
-
 }
