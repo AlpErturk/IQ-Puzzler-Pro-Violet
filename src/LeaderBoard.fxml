@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="600.0" maxWidth="600.0" minHeight="600.0" minWidth="600.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #E5F4F4;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LeaderBoardController">
+   <children>
+      <ImageView fitHeight="584.0" fitWidth="681.0" layoutX="-81.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:images/menu/snowy.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="159.0" layoutY="110.0" text="1." textFill="WHITE">
+         <font>
+            <Font size="54.0" />
+         </font>
+      </Label>
+      <Label layoutX="155.0" layoutY="176.0" text="2." textFill="WHITE">
+         <font>
+            <Font size="54.0" />
+         </font>
+      </Label>
+      <Label layoutX="155.0" layoutY="245.0" text="3." textFill="WHITE">
+         <font>
+            <Font size="54.0" />
+         </font>
+      </Label>
+      <Label fx:id="firstUsername" layoutX="218.0" layoutY="143.0" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: FFA500;" text="Label" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="218.0" layoutY="93.0" prefHeight="22.0" prefWidth="145.0" style="-fx-background-color: FFA500;" text="USERNAME" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="384.0" layoutY="93.0" style="-fx-background-color: FFA500;" text="SCORE" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="155.0" layoutY="316.0" text="4." textFill="WHITE">
+         <font>
+            <Font size="54.0" />
+         </font>
+      </Label>
+      <Label fx:id="firstScore" layoutX="380.0" layoutY="143.0" prefHeight="26.0" prefWidth="65.0" style="-fx-background-color: FFA500;" text="Label" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="secondUsername" layoutX="218.0" layoutY="202.0" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: FFA500;" text="Label" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="secondScore" layoutX="380.0" layoutY="202.0" prefHeight="26.0" prefWidth="65.0" style="-fx-background-color: FFA500;" text="Label" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="thirdUsername" layoutX="218.0" layoutY="265.0" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: FFA500;" text="Label" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="thirdScore" layoutX="380.0" layoutY="265.0" prefHeight="26.0" prefWidth="65.0" style="-fx-background-color: FFA500;" text="Label" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="fourthUsername" layoutX="218.0" layoutY="336.0" prefHeight="26.0" prefWidth="145.0" style="-fx-background-color: FFA500;" text="Label" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="fourthScore" layoutX="380.0" layoutY="336.0" prefHeight="26.0" prefWidth="65.0" style="-fx-background-color: FFA500;" text="Label" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="backView" fitHeight="66.0" fitWidth="65.0" layoutX="503.0" layoutY="14.0" onMouseClicked="#backButtonHandle" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+         <image>
+            <Image url="file:images/menu/Back.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

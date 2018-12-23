@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="600.0" maxWidth="600.0" minHeight="600.0" minWidth="600.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #E5F4F4;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoadGameController">
+    <children>
+        <ImageView fx:id="backView" fitHeight="752.0" fitWidth="814.0" layoutX="-214.0" layoutY="-5.0" onMouseMoved="#refreshLevels" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="file:images/menu/snowy.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="backButton" layoutX="500.0" layoutY="28.0" mnemonicParsing="false" onAction="#backButtonHandle" prefHeight="31.0" prefWidth="73.0" text="Back" />
+        <ImageView fx:id="levelOneButton" fitHeight="79.0" fitWidth="73.0" layoutX="120.0" layoutY="103.0" onMouseClicked="#levelOneClick" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="file:images/loadgame/levelOne.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="levelTwoButton" fitHeight="87.0" fitWidth="84.0" layoutX="249.0" layoutY="95.0" onMouseClicked="#levelTwoClick" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="file:images/loadgame/levelTwoU.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="levelThreeButton" fitHeight="98.0" fitWidth="73.0" layoutX="386.0" layoutY="95.0" onMouseClicked="#levelThreeClick" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="file:images/loadgame/levelThreeU.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="levelFiveButton" fitHeight="87.0" fitWidth="84.0" layoutX="249.0" layoutY="213.0" onMouseClicked="#levelFiveClick" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="file:images/loadgame/levelFiveU.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="levelEightButton" fitHeight="87.0" fitWidth="84.0" layoutX="249.0" layoutY="346.0" onMouseClicked="#levelEightClick" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="file:images/loadgame/levelEightU.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="levelSixButton" fitHeight="87.0" fitWidth="84.0" layoutX="386.0" layoutY="213.0" onMouseClicked="#levelSixClick" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="file:images/loadgame/levelSixU.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="levelNineButton" fitHeight="87.0" fitWidth="84.0" layoutX="386.0" layoutY="346.0" onMouseClicked="#levelNineClick" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="file:images/loadgame/levelNineU.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="levelSevenButton" fitHeight="87.0" fitWidth="84.0" layoutX="120.0" layoutY="346.0" onMouseClicked="#levelSevenClick" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="file:images/loadgame/levenSevenU.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="levelFourButton" fitHeight="87.0" fitWidth="84.0" layoutX="120.0" layoutY="213.0" onMouseClicked="#levelFourClick" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="file:images/loadgame/levelFourU.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="levelTenButton" fitHeight="87.0" fitWidth="84.0" layoutX="249.0" layoutY="463.0" onMouseClicked="#levelTenClick" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="file:images/loadgame/levelTenU.png" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>

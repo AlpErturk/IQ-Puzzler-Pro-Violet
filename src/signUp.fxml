@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="600.0" maxWidth="600.0" minHeight="600.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #E5F4F4;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.signUpController">
+    <children>
+        <ImageView fitHeight="600.0" fitWidth="600.0" layoutX="3.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="file:images/menu/snowy.png" />
+            </image>
+        </ImageView>
+        <TextField fx:id="usernameField" layoutX="286.0" layoutY="209.0" prefHeight="41.0" prefWidth="198.0" />
+        <TextField fx:id="passwordField" layoutX="286.0" layoutY="280.0" prefHeight="41.0" prefWidth="198.0" />
+        <Button fx:id="signUpButton" layoutX="235.0" layoutY="379.0" mnemonicParsing="false" onAction="#signUpButtonHandle" prefHeight="50.0" prefWidth="122.0" text="Sign Up" textFill="#222121" />
+        <Button fx:id="backButton" layoutX="500.0" layoutY="28.0" mnemonicParsing="false" onAction="#backButtonHandle" prefHeight="31.0" prefWidth="73.0" text="Back" />
+        <Label alignment="CENTER" layoutX="212.0" layoutY="107.0" prefHeight="50.0" prefWidth="168.0" style="-fx-background-color: #FFA500;" text="Sign Up" textFill="#f8f7f7">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER" layoutX="129.0" layoutY="214.0" prefHeight="31.0" prefWidth="122.0" style="-fx-background-color: #FFA500;" text="Username" textFill="#f8f7f7">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label alignment="CENTER" layoutX="129.0" layoutY="285.0" prefHeight="31.0" prefWidth="122.0" style="-fx-background-color: #FFA500;" text="Password" textFill="#f8f7f7">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

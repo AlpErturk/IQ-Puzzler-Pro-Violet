@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.logInScreenController">
+    <children>
+      <ImageView fitHeight="580.0" fitWidth="659.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:images/menu/snowy.png" />
+         </image>
+      </ImageView>
+        <TextField fx:id="userNameTextField" layoutX="193.0" layoutY="228.0" prefHeight="39.0" prefWidth="223.0" promptText="Username" />
+      <PasswordField fx:id="passwordTextField" layoutX="193.0" layoutY="303.0" prefHeight="39.0" prefWidth="223.0" promptText="Password" />
+      <ImageView fitHeight="145.0" fitWidth="292.0" layoutX="208.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:images/menu/IQPuzzler.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="loginView" fitHeight="39.0" fitWidth="109.0" layoutX="431.0" layoutY="228.0" onMousePressed="#signInButtonHandle" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:images/menu/login.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="logupView" fitHeight="47.0" fitWidth="104.0" layoutX="431.0" layoutY="303.0" onMousePressed="#signUpButtonHandle" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:images/menu/logup.png" />
+         </image>
+      </ImageView>
+    </children>
+   <effect>
+      <Lighting diffuseConstant="2.0" specularConstant="0.0" specularExponent="40.0" surfaceScale="0.0">
+         <bumpInput>
+            <Shadow />
+         </bumpInput>
+         <light>
+            <Light.Distant color="#a9ddff" />
+         </light>
+      </Lighting>
+   </effect>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</AnchorPane>
